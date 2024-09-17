@@ -367,7 +367,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param linkExtractor a function to extract a "next" link to follow. Retuning a null or empty string ends the paging
      * @return a PagedList of your type
      */
-    <T> PagedList<T> asPaged(Function<HttpRequest, HttpResponse> mappingFunction,
+    <T> PagedList<T> asPaged(Function<HttpRequest, HttpResponse<T>> mappingFunction,
                              Function<HttpResponse<T>, String> linkExtractor);
 
     /**
